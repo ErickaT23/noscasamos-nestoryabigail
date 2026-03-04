@@ -293,3 +293,26 @@ function initFlipCountdown(targetISO){
   tick();
   setInterval(tick, 1000);
 }
+
+//animaciones
+// ================= ANIMACIONES POR SECCIÓN (AUTO) =================
+document.addEventListener("DOMContentLoaded", () => {
+  const sections = document.querySelectorAll("section");
+
+  // fallback por si el navegador no soporta IntersectionObserver
+  if (!("IntersectionObserver" in window)) {
+    sections.forEach(s => s.classList.add("is-visible"));
+    return;
+  }
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e) => {
+      if (e.isIntersecting) {
+        e.target.classList.add("is-visible");
+        io.unobserve(e.target); // solo una vez
+      }
+    });
+  }, { threshold: 0.18 });
+
+  sections.forEach(s => io.observe(s));
+});

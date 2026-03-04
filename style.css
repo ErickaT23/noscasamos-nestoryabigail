@@ -912,3 +912,122 @@ a{
     border-color: var(--olive);
   }
 
+/*ANIMACIONES*/
+/* BOTONES: se nota en desktop (hover) y en celular (tap) */
+button, .btn-outline, a.btn-outline {
+    transition: transform .18s ease, box-shadow .18s ease, opacity .18s ease;
+    will-change: transform;
+  }
+  
+  button:hover, .btn-outline:hover, a.btn-outline:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0,0,0,.14);
+  }
+  
+  button:active, .btn-outline:active, a.btn-outline:active {
+    transform: scale(.98);
+    box-shadow: 0 6px 14px rgba(0,0,0,.12);
+  }
+
+  /* ================= ANIMACIONES NOTORIAS (AUTO) ================= */
+
+/* Estado inicial */
+section h3,
+section p,
+section .event-icon {
+  opacity: 0;
+  transform: translateY(28px) scale(.98);
+  filter: blur(3px);
+  transition: opacity .9s cubic-bezier(.2,.8,.2,1),
+              transform .9s cubic-bezier(.2,.8,.2,1),
+              filter .9s cubic-bezier(.2,.8,.2,1);
+  will-change: opacity, transform, filter;
+}
+
+/* Activación por sección */
+section.is-visible h3,
+section.is-visible p,
+section.is-visible .event-icon {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  filter: blur(0);
+}
+
+/* Stagger dentro de la sección */
+section.is-visible .event-icon { transition-delay: .05s; }
+section.is-visible h3          { transition-delay: .15s; }
+section.is-visible p           { transition-delay: .28s; }
+
+/* Botones: más “wow” */
+button, .btn-outline, a.btn-outline {
+  transition: transform .18s ease, box-shadow .18s ease, filter .18s ease;
+}
+
+button:hover, .btn-outline:hover, a.btn-outline:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 14px 28px rgba(0,0,0,.18);
+  filter: brightness(1.03);
+}
+
+button:active, .btn-outline:active, a.btn-outline:active {
+  transform: scale(.97);
+  box-shadow: 0 10px 22px rgba(0,0,0,.15);
+}
+
+/* Iconos: bounce suave al entrar */
+section.is-visible .event-icon {
+  animation: iconPop .55s cubic-bezier(.2,.9,.3,1) both;
+}
+
+@keyframes iconPop {
+  0%   { transform: translateY(18px) scale(.85); opacity: 0; }
+  70%  { transform: translateY(-6px) scale(1.08); opacity: 1; }
+  100% { transform: translateY(0) scale(1); }
+}
+
+/* Accesibilidad: reduce motion */
+@media (prefers-reduced-motion: reduce){
+  section h3, section p, section .event-icon,
+  button, .btn-outline, a.btn-outline{
+    transition: none !important;
+    animation: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+    filter: none !important;
+  }
+}
+
+/* ================= BOTONES SLIDE IN ================= */
+
+/* Estado inicial */
+section button,
+section .btn-outline,
+section a.btn-outline {
+
+  opacity: 0;
+  transform: translateX(-120px);
+  transition: 
+    transform 1s cubic-bezier(.22,1,.36,1),
+    opacity .9s ease;
+  will-change: transform, opacity;
+}
+
+/* Cuando la sección es visible */
+section.is-visible button,
+section.is-visible .btn-outline,
+section.is-visible a.btn-outline {
+
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Stagger bonito si hay varios botones */
+section.is-visible button:nth-of-type(1),
+section.is-visible .btn-outline:nth-of-type(1) {
+  transition-delay: .25s;
+}
+
+section.is-visible button:nth-of-type(2),
+section.is-visible .btn-outline:nth-of-type(2) {
+  transition-delay: .5s;
+}

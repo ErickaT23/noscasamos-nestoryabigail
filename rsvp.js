@@ -304,3 +304,4 @@ document.addEventListener("DOMContentLoaded", () => {
   btnSi.addEventListener("click", () => confirmar("SI"));
   btnNo.addEventListener("click", () => confirmar("NO"));
 });
+
