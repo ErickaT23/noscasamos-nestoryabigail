@@ -31,6 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
     "images/H2.jpeg",
     "images/H4.jpeg",
     "images/H5.jpeg",
+    "images/H6.png",
     "images/V2.jpeg",
   ]);
 });

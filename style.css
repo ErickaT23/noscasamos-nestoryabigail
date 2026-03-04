@@ -210,7 +210,7 @@ a{
   }
   
   .name-lines{
-    font-size:30px;
+    font-size:28px;
     letter-spacing:.18em;
     line-height:1.6;
     text-transform:uppercase;
@@ -509,7 +509,7 @@ a{
     background-color: white;
 
   }
-  .event-title, .dress h3, .gifts h3, .rsvp h3{
+  .event-title, .dress h3, .gifts h3, .rsvp h3, .album h3{
     font-size:40px;
     font-family: var(--cursive);
            /* Degradado dorado */
@@ -520,7 +520,7 @@ a{
     display: flex;
     justify-content: center;
   }
-  .dress h3, .dress-strong, .dress-note, .gifts h3, .gifts-strong, .rsvp h3, .rsvp-strong{
+  .dress h3, .dress-strong, .dress-note, .gifts h3, .gifts-strong, .rsvp h3, .rsvp-strong, .album h3, .album p{
     margin-top: 0;
     margin-bottom: 0;
   }
@@ -541,7 +541,7 @@ a{
     justify-content: center;
     font-size: 20px;
 }
-  .event-address, .dress-note, .gifts-strong, .rsvp-strong{
+  .event-address, .dress-note, .gifts-strong, .rsvp-strong, .album p{
     margin-top: 10px;
     font-family: var(--text);
     font-size: 20px;
@@ -1030,4 +1030,39 @@ section.is-visible .btn-outline:nth-of-type(1) {
 section.is-visible button:nth-of-type(2),
 section.is-visible .btn-outline:nth-of-type(2) {
   transition-delay: .5s;
+}
+/* ================= ALBUM DE FOTOS ================= */
+
+.album{
+  padding: 70px 24px;
+  text-align: center;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.album-text{
+  max-width: 520px;
+  margin: 0 auto 24px;
+  font-size: 17px;
+  line-height: 1.6;
+  color: #555;
+}
+
+.album-qr{
+  margin: 20px auto 10px;
+}
+
+.album-qr img{
+  width: 320px;
+  height: 320px;
+}
+
+.album-note{
+  font-size: 15px;
+  color: #777;
+  margin-bottom: 20px;
 }
