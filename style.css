@@ -495,7 +495,7 @@ a{
     height:100%;
     object-fit:contain;
   }
-  .event-top, .gifts, .rsvp{
+  .event-top, .gifts, .rsvp, #anotation{
     display:flex; 
     gap:12px; 
     align-items:flex-start;
@@ -759,10 +759,10 @@ a{
     justify-content: center;
     align-items: center;
   }
-  .love-quote{
+  .love-quote, #anotation{
     background-color: #3f53226d;
   }
-  .love-quote p {
+  .love-quote p, #anotation h1{
     color: var(--olive-dark);
     font-family: var(--cursive);
     font-size: 28px;
